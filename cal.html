@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #container{
+            margin-top: 220px;
+            background-image: url(bg3.jpg);
+            background-size: contain;
+            /* background-repeat: no-repeat; */
+            border: 2px solid black;
+            width: 12%;
+            display: flex;
+            justify-content: center;
+            flex-wrap:wrap;
+   
+        }
+
+        #btn{
+
+            display: flex;
+            justify-content: center;
+            flex-wrap:wrap;
+        
+        }
+        button{
+            border-radius: 50px;
+            background-color: rgb(3, 235, 53);
+            margin: auto;
+            height: 35px;
+            width: 35px;  
+        }
+
+    </style>
+</head>
+
+<script>
+    let currentvalue = '';
+    document.querySelector('#display').value=currentvalue
+
+    function backspace() {
+        currentvalue = currentvalue.slice(0, -1); // Remove the last character
+        document.querySelector('#display').value = currentvalue;
+    }
+
+</script>
+<body><center style="display: flex; justify-content: center; height: auto; width: auto;">
+    
+    <div id="container">
+        <input type="text" id="display" readonly style="background-color: aqua;"> 
+
+        <div id="btn"></div>
+        <button onclick="currentvalue=currentvalue+'7';document.querySelector('#display').value=currentvalue">7</button>
+        <button onclick="currentvalue=currentvalue+'8';document.querySelector('#display').value=currentvalue">8</button>
+        <button onclick="currentvalue=currentvalue+'9';document.querySelector('#display').value=currentvalue">9</button>
+        <button onclick="currentvalue=currentvalue+'*';document.querySelector('#display').value=currentvalue">*</button>
+        <button onclick="currentvalue=currentvalue+'4';document.querySelector('#display').value=currentvalue">4</button>
+        <button onclick="currentvalue=currentvalue+'5';document.querySelector('#display').value=currentvalue">5</button>
+        <button onclick="currentvalue=currentvalue+'6';document.querySelector('#display').value=currentvalue">6</button>
+        <button onclick="currentvalue=currentvalue+'-';document.querySelector('#display').value=currentvalue">-</button>
+        <button onclick="currentvalue=currentvalue+'1';document.querySelector('#display').value=currentvalue">1</button>
+        <button onclick="currentvalue=currentvalue+'2';document.querySelector('#display').value=currentvalue">2</button>
+        <button onclick="currentvalue=currentvalue+'3';document.querySelector('#display').value=currentvalue">3</button>
+        <button onclick="currentvalue=currentvalue+'+';document.querySelector('#display').value=currentvalue">+</button>
+        <button onclick="currentvalue='';document.querySelector('#display').value=currentvalue">C</button>
+        <button onclick="currentvalue=currentvalue+'0';document.querySelector('#display').value=currentvalue">0</button>
+        <button onclick="currentvalue=currentvalue+'/';document.querySelector('#display').value=currentvalue">/</button>
+        <button onclick="currentvalue=eval(currentvalue);document.querySelector('#display').value=currentvalue">=</button>
+        <button onclick="backspace()">⌫</button>
+
+    </div>
+</center>
+</body>
+</html>
